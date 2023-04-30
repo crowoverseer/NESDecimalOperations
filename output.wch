@@ -1,0 +1,10 @@
+
+8
+00000 0300  b  u  0  Number
+00001 0301  b  u  0  VALUE
+00002 0302  b  u  0  MOD10
+00003 0307  b  u  0  decimal_0
+00004 0308  b  u  0  decimal_10
+00005 0309  b  u  0  decimal_100
+00006 030A  b  u  0  decimal_1000
+00007 030B  b  u  0  decimal_10000
