@@ -1,3 +1,7 @@
+# FCEUX files
+*.fdb
+*.wch
+
 # Prerequisites
 *.d
 
