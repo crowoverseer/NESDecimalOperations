@@ -1,6 +1,7 @@
 # FCEUX files
 *.fdb
 *.wch
+output.nes
 
 # Prerequisites
 *.d
