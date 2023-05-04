@@ -1,6 +1,8 @@
-;; gets the number from $0300
-;; using $0301-$0303 addresses to compute, leaves garbage
-;; stores everything into $0307-030A ; 3 decimal numbers
+;;; not protected A, X, Y registers
+
+;;; gets the number from $0300
+;;; using $0301-$0303 addresses to compute, leaves garbage
+;;; stores everything into $0307-030A ; 3 decimal numbers
 
 .export int8ToDecimal
 .proc int8ToDecimal
@@ -35,15 +37,15 @@ divloop:
 ignore_result:
   dex
   bne divloop
-  rol VALUE ; shift in the last bit of the quotient
+  rol VALUE                    ; shift in the last bit of the quotient
 
-  lda MOD10 ; a now contain the character
+  lda MOD10                     ; a now contain the character
   ldy CHR_COUNT
-  sta RESULT, y; write char into result
+  sta RESULT, y                 ; write char into result
   inc CHR_COUNT
 
-  lda VALUE; if value != 0, the continue dividing
-  bne int8ToDecimal ; branch if value not zero
+  lda VALUE                     ; if value != 0, the continue dividing
+  bne int8ToDecimal             ; branch if value not zero
 
   ;; fill other values with 0
 zero_loop:
